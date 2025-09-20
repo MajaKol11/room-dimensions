@@ -1,0 +1,61 @@
+# ---> .NET
+bin/
+obj/
+artifacts/
+*.dll
+*.exe
+*.log
+*.pdb
+*.cache
+*.config
+*.dbmdl
+*.bak
+*.ldf
+*.ndf
+*.mdf
+*.vscode-test/
+
+# .NET user secrets
+secrets.json
+
+# NuGet packages
+*.nupkg
+*.snupkg
+*.nuspec
+*.psmdcp
+.nuget/
+packages/
+!packages/build/
+
+# Publish output
+wwwroot/dist/
+wwwroot/*.gz
+wwwroot/*.br
+
+# ---> VS Code
+.vscode/
+.history/
+*.code-workspace
+
+# ---> Visual Studio
+.vs/
+*.user
+*.suo
+*.sln.docstates
+*.rsuser
+
+# ---> Rider / JetBrains
+.idea/
+*.sln.iml
+
+# ---> OS-specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---> Node.js (in case you add npm/JS tooling)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
