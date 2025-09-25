@@ -101,3 +101,17 @@ a, .btn-link {
 code {
     color: #c02d76;
 }
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: .5rem 1rem;
+    max-width: 420px;
+    align-items: center;
+}
+
+.results {
+    padding: 1rem;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+}
