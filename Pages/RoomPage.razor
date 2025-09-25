@@ -1,0 +1,46 @@
+﻿@page "/room"
+@using RoomCalculator.Models
+@using RoomCalculator.Services
+@inject IRoomCalculatorService Calc
+
+<h3 class="mb-3">Room Calculator</h3>
+
+<EditForm Model="dims" OnValidSubmit="OnCalculate">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-grid">
+        <label for="length">Length (m)</label>
+        <InputNumber id="length" @bind-Value="dims.Length" />
+        <ValidationMessage For="() => dims.Length" />
+
+        <label for="breadth">Breadth (m)</label>
+        <InputNumber id="breadth" @bind-Value="dims.Breadth" />
+        <ValidationMessage For="() => dims.Breadth" />
+
+        <label for="height">Height (m)</label>
+        <InputNumber id="height" @bind-Value="dims.Height" />
+        <ValidationMessage For="() => dims.Height" />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Calculate</button>
+</EditForm>
+
+@if (result is not null)
+{
+    <div class="results mt-3">
+        <p><strong>Area:</strong> @result.Area m²</p>
+        <p><strong>Perimeter:</strong> @result.Perimeter m</p>
+        <p><strong>Volume:</strong> @result.Volume m³</p>
+    </div>
+}
+
+@code {
+    private RoomDimensions dims = new() { Height = 2.3 };
+    private RoomResult? result;
+
+    private void OnCalculate()
+    {
+        result = Calc.Calculate(dims);
+    }
+}

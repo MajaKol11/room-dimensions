@@ -1,25 +1,20 @@
-using System;
 using RoomCalculator.Models;
+
 namespace RoomCalculator.Services;
 
 public class RoomCalculatorService : IRoomCalculatorService
 {
-    public RoomResult Calculate(Room room)
+    public RoomResult Calculate(RoomDimensions dims)
     {
-        if (room == null)
-        {
-            throw new ArgumentNullException(nameof(room));
-        }
-
-        var area = room.Length * room.Breadth;
-        var perimeter = 2 * (room.Length + room.Breadth);
-        var volume = room.Length * room.Breadth * room.Height;
+        var area = dims.Length * dims.Breadth;
+        var perimeter = 2 * (dims.Length + dims.Breadth);
+        var volume = area * dims.Height;
 
         return new RoomResult
         {
             Area = area,
             Perimeter = perimeter,
-            Volumen = volume
+            Volume = volume
         };
     }
 }
