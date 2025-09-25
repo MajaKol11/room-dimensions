@@ -57,7 +57,7 @@ cd RoomCalculator
 ```bash
 dotnet watch
 ```
--Then open the URL shown in the console (usually http://localhost:5000 or http://localhost:5173)
+Then open the URL shown in the console (usually http://localhost:5000 or http://localhost:5173)
 
 ## Example
 
